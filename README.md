@@ -17,7 +17,7 @@ This step allows you to recieve a payload from Standard Fusion.
 * [standardfusion.png](/standardfusion.png) - Standard Fusion logo
 
 # How it works
-This step takes a Standard Fusion Payload and creates xMatters variables.
+This step takes a Standard Fusion payload and creates flow designer outputs.
 
 
 # Installation
