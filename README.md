@@ -30,7 +30,7 @@ This step takes a Standard Fusion payload and creates flow designer outputs.
 5. Copy the Initiation URL and store for later, then close the dialog. 
 6. Double click the Create xMatters event step and populate the Recipients field. Alternatively, [subscriptions](https://help.xmatters.com/ondemand/userguide/receivingalerts/subscriptions/sharingsubscriptions.htm) can be set up to target the appropriate parties based on components in the event properties. 
 <kbd>
-	<img src="/media/recipients.png" width="50%">
+	<img src="/media/recipients.png" width="400">
 </kbd>
 7. Save the step and repeat as necessary for the other xMatters Event Steps.
 8. Save the canvas. 
@@ -38,7 +38,7 @@ This step takes a Standard Fusion payload and creates flow designer outputs.
 ## StandardFusion Setup
 1. Navigate to Settings > System > Integrations.
 <kbd>
-	<img src="/media/integrations.png" width="50%">
+	<img src="/media/integrations.png" width="400">
 </kbd>
 
 2. Create a new Integration called "Fire to xMatters".
@@ -65,7 +65,7 @@ FieldMappingsJson:
 ```
 
 <kbd>
-	<img src="/media/firetoxm.png" width="50%">
+	<img src="/media/firetoxm.png" width="400">
 </kbd>
 
 4. Navigate to the Advanced tab and replace the `"EventRules": []` with the following.
@@ -100,7 +100,7 @@ FieldMappingsJson:
 }
 ```
 <kbd>
-	<img src="/media/eventrules.png" width="50%">
+	<img src="/media/eventrules.png" width="400">
 </kbd>
 
 5. Check the appropriate boxes on the Event Rules for when to fire to xMatters.
