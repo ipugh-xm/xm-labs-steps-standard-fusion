@@ -26,6 +26,7 @@ This step takes a Standard Fusion Payload and creates xMatters variables.
 1. Navigate to Settings > System > Integrations.
 2. Create a new Integration called "Fire to xMatters".
 3. Paste in the HTTP Trigger url and paste in the following for the FieldMappingsJson.
+
 FieldMappingsJson:
 ```
 {
@@ -46,6 +47,7 @@ FieldMappingsJson:
 }
 ```
 4. Navigate to the Advanced tab and replace the "EventRules": [] with the following.
+
 Advanced tab content:
 ```
 {
