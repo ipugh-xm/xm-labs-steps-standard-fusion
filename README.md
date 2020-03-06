@@ -1,6 +1,6 @@
-# Standard Fusion Steps
+# StandardFusion
 
-This step allows you to recieve a payload from Standard Fusion.
+This integration recieves and parses the payload from StandardFusion and generates an xMatters event to notify the designated recipients. This is a starting point for building out simple and complex workflows.
 
 
 ---------
@@ -14,13 +14,26 @@ This step allows you to recieve a payload from Standard Fusion.
 # Files
 
 * [StandardFusion.zip](StandardFusion.zip) - Workflow zip file
-* [standardfusion.png](/standardfusion.png) - Standard Fusion logo
+* [standardfusion.png](standardfusion.png) - Standard Fusion logo
 
 # How it works
 This step takes a Standard Fusion payload and creates flow designer outputs.
 
 
 # Installation
+
+## xMatters Setup
+1. Download the [StandardFusion.zip](StandardFusion.zip) file onto your local computer
+2. Navigate to the Workflows section of your xMatters instance
+3. Click Import, and select the zip file you just downloaded and when finished importing, click Open Workflow. 
+4. Click the Incident canvas in the Flows tab, then double click the *Incident - Inbound from Standard Fusion* http trigger. 
+5. Copy the Initiation URL and store for later, then close the dialog. 
+6. Double click the Create xMatters event step and populate the Recipients field. Alternatively, [subscriptions](https://help.xmatters.com/ondemand/userguide/receivingalerts/subscriptions/sharingsubscriptions.htm) can be set up to target the appropriate parties based on components in the event properties. 
+<kbd>
+	<img src="/media/recipients.png" width="50%">
+</kbd>
+7. Save the step and repeat as necessary for the other xMatters Event Steps.
+8. Save the canvas. 
 
 ## StandardFusion Setup
 1. Navigate to Settings > System > Integrations.
@@ -29,7 +42,7 @@ This step takes a Standard Fusion payload and creates flow designer outputs.
 </kbd>
 
 2. Create a new Integration called "Fire to xMatters".
-3. Paste in the HTTP Trigger url and paste in the following for the FieldMappingsJson.
+3. Paste in the HTTP Trigger url from above and paste in the following for the FieldMappingsJson.
 
 FieldMappingsJson:
 ```
@@ -56,8 +69,6 @@ FieldMappingsJson:
 </kbd>
 
 4. Navigate to the Advanced tab and replace the `"EventRules": []` with the following.
-
-Advanced tab content:
 ```
 {
    "EventRules": [
@@ -94,10 +105,7 @@ Advanced tab content:
 
 5. Check the appropriate boxes on the Event Rules for when to fire to xMatters.
 
-## xMatters Setup
-1. Download the [StandardFusion.zip](StandardFusion.zip) file onto your local computer
-2. Navigate to the Workflows section of your xMatters instance
-3. Click Import, and select the zip file you just downloaded
+
 
 
 ## Usage
