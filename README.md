@@ -13,7 +13,7 @@ This step allows you to recieve a payload from Standard Fusion.
 
 # Files
 
-* [StandardFusionSteps.zip](StandardFusionSteps.zip) - Workflow zip file with the step and example flow
+* [StandardFusion.zip](StandardFusion.zip) - Workflow zip file
 * [standardfusion.png](/standardfusion.png) - Standard Fusion logo
 
 # How it works
@@ -24,6 +24,10 @@ This step takes a Standard Fusion payload and creates flow designer outputs.
 
 ## StandardFusion Setup
 1. Navigate to Settings > System > Integrations.
+<kbd>
+	<img src="/media/integrations.png" width="50%">
+</kbd>
+
 2. Create a new Integration called "Fire to xMatters".
 3. Paste in the HTTP Trigger url and paste in the following for the FieldMappingsJson.
 
@@ -46,14 +50,17 @@ FieldMappingsJson:
    "Event.EventType":"EventType"
 }
 ```
-4. Navigate to the Advanced tab and replace the "EventRules": [] with the following.
+
+<kbd>
+	<img src="/media/firetoxm.png" width="50%">
+</kbd>
+
+4. Navigate to the Advanced tab and replace the `"EventRules": []` with the following.
 
 Advanced tab content:
 ```
 {
-  "WebhookUrl": "https://acme.xmatters.com/api/integration/1/functions/UUID/triggers?apiKey=API_KEY",
-  "FieldMappingsJson": "{\n   \"Target.Key\":\"Key\",\n   \"Target.Name\":\"Name\",\n   \"Target.Description\":\"Description\",\n   \"Target.WorkflowState\":\"Status\",\n   \"Target.Notes\":\"Notes\",\n   \"Target.Owner_DisplayName\":\"Owner\",\n   \"Target.IncidentDate\":\"Incident Date\",\n   \"Target.Severity\":\"Severity\",\n   \"Target.Category\":\"Category\",\n   \"Target.ClassificationLevel\":\"Classification\",\n   \"Target.Tags\":\"Tags\",\n   \"Target.Folder\":\"Folder\",\n   \"Target.ID\":\"ID\",\n   \"Event.EventType\":\"EventType\",\n   \"Target.Custom_ClosingDate\": \"Incident Close Date\"\n}",
-  "EventRules": [
+   "EventRules": [
     {
       "Name": "Send on Incident Creation",
       "IsEnabled": true,
@@ -81,11 +88,15 @@ Advanced tab content:
   ]
 }
 ```
+<kbd>
+	<img src="/media/eventrules.png" width="50%">
+</kbd>
+
 5. Check the appropriate boxes on the Event Rules for when to fire to xMatters.
 
 ## xMatters Setup
-1. Download the [StandardFusionSteps.zip](StandardFusionSteps.zip) file onto your local computer
-2. Navigate to the Developer tab of your xMatters instance
+1. Download the [StandardFusion.zip](StandardFusion.zip) file onto your local computer
+2. Navigate to the Workflows section of your xMatters instance
 3. Click Import, and select the zip file you just downloaded
 
 
@@ -93,7 +104,7 @@ Advanced tab content:
 The **Inbound from Standard Fusion** HTTP Trigger is now available in your custom steps. So navigate to the appropriate canvas so you can add the step there. If you'd like to experiment with it, the **Incident** workflow has a canvas that can be triggered via HTTP call. 
 
 ### Inputs
-StandardFusion Payload:
+Example StandardFusion Payload:
 ```
 {
   "Key": "IC-38",
