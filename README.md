@@ -29,9 +29,11 @@ This step takes a Standard Fusion payload and creates flow designer outputs.
 4. Click the Incident canvas in the Flows tab, then double click the *Incident - Inbound from Standard Fusion* http trigger. 
 5. Copy the Initiation URL and store for later, then close the dialog. 
 6. Double click the Create xMatters event step and populate the Recipients field. Alternatively, [subscriptions](https://help.xmatters.com/ondemand/userguide/receivingalerts/subscriptions/sharingsubscriptions.htm) can be set up to target the appropriate parties based on components in the event properties. 
+
 <kbd>
 	<img src="/media/recipients.png" width="400">
 </kbd>
+
 7. Save the step and repeat as necessary for the other xMatters Event Steps.
 8. Save the canvas. 
 
